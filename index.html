@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>light_button</title>
+</head>
+<body>
+    <h1>Light Button</h1>
+    <div class="container">
+        <a>Button</a>
+        <a>Button</a>
+        <a>Button</a>
+    </div>
+</body>
+</html>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        background-color: black;
+    }
+    h1{
+        color: white;
+        text-align: center;
+        margin: 5%;
+        text-shadow: 0 0 15px ;
+    }
+    .container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    a{
+        margin: 3%;
+        color: aqua;
+        padding: 20px 60px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: .3s;
+        font-size: 24px;
+        -webkit-box-reflect:below  5px linear-gradient(transparent,#0003);;/* 倒影 */
+    }
+    .container :nth-child(1){
+        filter:hue-rotate(200deg) ; /* 改變顏色濾鏡 */
+    }
+    .container :nth-child(2){
+        filter:hue-rotate(100deg) ;
+    }
+
+    a::before{
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        border-top:2px solid aqua;
+        border-left:2px solid aqua;
+        transition: .2s;
+
+    }
+    a::after{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 15px;
+        height: 15px;
+        border-right:2px solid aqua;
+        border-bottom:2px solid aqua;
+        transition: .2s;
+
+    }
+    a:hover::before,
+    a:hover::after{
+        width: 100%;
+        height: 100%;
+    }
+    a:hover{
+        transition-delay:.2s ;
+        background-color: aqua;
+        box-shadow:0 0 40px aqua;
+        color: black;
+    }
+
+</style>
